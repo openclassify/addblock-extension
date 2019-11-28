@@ -30,8 +30,7 @@ class addBlock
         $views = "";
         $params = $this->params;
         foreach ($installed_modules as $item) {
-            $namespace = explode('.', $item->namespace);
-            if (file_exists("../addons/default/" . $namespace[0] . "/" . end($namespace) . "-module/resources/views/" . $this->location . ".twig")) {
+            if (file_exists($item->path . "/resources/views/" . $this->location . ".twig")) {
                 $views .= view($item->namespace . '::' . $this->location, compact('params'));
             }
         }
