@@ -26,6 +26,7 @@ class addBlock
     public function handle()
     {
         $installed_modules = app('module.collection')->installed();
+        $installed_modules = $installed_modules->merge(app('extension.collection')->installed());
 
         $views = "";
         $params = $this->params;
