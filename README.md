@@ -2,6 +2,35 @@
 Belirtilen alanlara başka bir modülden eklemeler yapmanıza olanak sağlar.
 
 
+## Blocks
+- advs-module/ad-detail/partials/author-button
+            
+            {{ addBlock('ad-detail/partials/author-button', {'adv_id': adv.id})|raw }}
+- advs-module/list/partials/ads
+
+            {{ addBlock('ad-list/partials/ads',{'featured_advs':featured_advs})|raw }}
+
+- profile-module/profile/partials/navigation
+
+            {{ addBlock('profile/navigation')|raw }}
+            
+- advs-module/ad-detail/partials/detail
+
+            {{ addBlock('ad-detail/seller/action',{'adv':adv})|raw }}
+            
+- advs-module/ad-detail/detail
+
+            {{ addBlock('ad-detail/title/action',{'adv':adv})|raw }}
+
+- profile-module/profile/partials/navigation
+
+            {{ addBlock('profile/navigation')|raw }}
+            
+- advs-module/new-ad/new-create
+
+            {{ addBlock('new-ad/fields')|raw }}
+            
+
 #Kullanım
 
         {{ addBlock('twig_dosya_adi',{'veri1':veri1,veri2:veri2,...})|raw }}
