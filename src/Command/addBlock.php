@@ -33,10 +33,11 @@ class addBlock
         $requiresOrdering = array();
         foreach ($installed_modules as $item) {
             if (file_exists($item->path . "/resources/views/" . $this->location . ".twig")) {
-                if (isset($this->params['_ORDER_']) &&
-                    array_search($item->namespace, $this->params['_ORDER_'], true) !== false) {
+                if (isset($this->params['_ORDER_'])) {
                     $order = array_search($item->namespace, $this->params['_ORDER_'], true);
-                    $requiresOrdering[$order] = array(view($item->namespace . '::' . $this->location, compact('params')));
+                    if ($order !== false) {
+                        $requiresOrdering[$order] = array(view($item->namespace . '::' . $this->location, compact('params')));
+                    }
                 } else {
                     $views[] = view($item->namespace . '::' . $this->location, compact('params'));
                 }
