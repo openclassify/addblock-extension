@@ -42,8 +42,8 @@ class AddblockExtensionServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $routes = [
-        'ajax/getBlock' => [
-            'as' => 'addBlock::getBlock',
+        'api/get-block' => [
+            'as' => 'visiosoft.extension.addblock::api_get_block',
             'uses' => 'Visiosoft\AddblockExtension\Http\Controller\AddBlockController@getBlock',
         ],
     ];

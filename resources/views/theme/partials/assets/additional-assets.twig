@@ -1,4 +1,4 @@
-{{ asset_script('visiosoft.extension.addblock::js/block-service.js') }}
+{{ asset_add('scripts.js','visiosoft.extension.addblock::js/block-service.js') }}
 <script>
-    var service_url = "{{ url_route('addBlock::getBlock') }}";
+    var service_url = "{{ url_route('visiosoft.extension.addblock::api_get_block') }}";
 </script>
