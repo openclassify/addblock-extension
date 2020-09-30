@@ -8,8 +8,7 @@ class AddBlockController extends PublicController
     public function getBlock()
     {
         $html = "";
-        if ($this->request->location) {
-            $location = $this->request->location;
+        if ($location = $this->request->location) {
             $html = new addBlock($location, $this->request->params);
             $html = $html->handle();
         }
