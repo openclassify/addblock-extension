@@ -3,7 +3,7 @@ function getBlock(location, params = {}) {
     $.ajax({
         type: 'POST',
         data: {'location': location, 'params': params},
-        async: false,
+        async: true,
         url: service_url,
         success: function (r) {
             html = r.html;
