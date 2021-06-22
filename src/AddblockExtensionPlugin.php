@@ -14,9 +14,9 @@ class AddblockExtensionPlugin extends Plugin
         return [
             new \Twig_SimpleFunction(
                 'addBlock',
-                function ($location, $params = []) {
+                function ($location, $params = [], $addons = []) {
 
-                    if (!$addBlock = $this->dispatch(new addBlock($location, $params))) {
+                    if (!$addBlock = $this->dispatch(new addBlock($location, $params, $addons))) {
                         return null;
                     }
 
