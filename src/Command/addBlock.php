@@ -17,7 +17,7 @@ class addBlock
      * @param $location
      * @param $params
      */
-    public function __construct($location, $params, $addons)
+    public function __construct($location, $params, $addons = [])
     {
         $this->location = $location;
         $this->params = $params;
