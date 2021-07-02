@@ -51,7 +51,7 @@ class addBlock
     {
         if (file_exists($item->path . "/resources/views/" . $this->location . ".twig")) {
             $views[] = [
-                'order' => 10,
+                'order' => $this->addons ? array_search($item->slug, $this->addons) : 10,
                 'view' => view($item->namespace . '::' . $this->location, compact('params'))
             ];
 
