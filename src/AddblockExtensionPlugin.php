@@ -16,7 +16,7 @@ class AddblockExtensionPlugin extends Plugin
                 'addBlock',
                 function ($location, $params = [], $addons = []) {
 
-                    if (!$addBlock = $this->dispatch(new addBlock($location, $params, $addons))) {
+                    if (!$addBlock = $this->dispatchSync(new addBlock($location, $params, $addons))) {
                         return null;
                     }
 
