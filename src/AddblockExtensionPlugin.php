@@ -12,7 +12,7 @@ class AddblockExtensionPlugin extends Plugin
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction(
+            new \Twig\TwigFunction(
                 'addBlock',
                 function ($location, $params = [], $addons = []) {
 
